@@ -67,6 +67,10 @@
     <Analyzer Include="..\..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\PracticeProject.Share\PracticeProject.Share.csproj">
+      <Project>{69970d07-698c-4f02-8578-db67245bfc23}</Project>
+      <Name>PracticeProject.Share</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\PracticeProject.MQ\PracticeProject.MQ.csproj">
       <Project>{4c68c55b-034d-41d1-aca2-c12b8990e45b}</Project>
       <Name>PracticeProject.MQ</Name>
