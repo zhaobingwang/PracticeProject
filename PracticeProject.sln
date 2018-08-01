@@ -34,6 +34,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{CD5D8390-D834-408E-A7B5-E44A134BA5C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQExample", "src\WindowsService\RabbitMQExample\MQExample\MQExample.csproj", "{983F89AE-2729-4A29-8914-1A891AB1A5A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +84,10 @@ Global
 		{69970D07-698C-4F02-8578-DB67245BFC23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69970D07-698C-4F02-8578-DB67245BFC23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69970D07-698C-4F02-8578-DB67245BFC23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{983F89AE-2729-4A29-8914-1A891AB1A5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983F89AE-2729-4A29-8914-1A891AB1A5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983F89AE-2729-4A29-8914-1A891AB1A5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{983F89AE-2729-4A29-8914-1A891AB1A5A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,7 @@ Global
 		{3B2324F4-A52B-463B-880A-26AD271D904B} = {1F2E2F95-0C02-4C1F-B4DE-E3DDEB79C240}
 		{9319FB7E-F6BF-41F8-A38A-CD5EC25C8A12} = {1F2E2F95-0C02-4C1F-B4DE-E3DDEB79C240}
 		{E079FF42-69B1-4F07-B764-15A4F16BE550} = {5E3D29E3-03C8-4B98-8399-ED5360A717E5}
+		{983F89AE-2729-4A29-8914-1A891AB1A5A8} = {CD5D8390-D834-408E-A7B5-E44A134BA5C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCC74296-FFDB-4B08-89F1-6365CF9C3EA0}
