@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RabbitMQConsumer.cs" />
     <Compile Include="RabbitMQProducer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
