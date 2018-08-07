@@ -21,10 +21,14 @@ namespace PracticeProject.WinForm
             InitializeComponent();
         }
         private static int pageIndex = 1;
-        private static int pageSize = 30;
+        private static int pageSize = 12;
         private static int total = 0;
         private static int totalPage = 0;
         private static int fakeTotal = 63;
+
+        private static int btnWidth = 100;
+        private static int btnHeight = 100;
+        private static int btnGap = 10;
         private void GeneratedButtonForm_Load(object sender, EventArgs e)
         {
             GeneratedButton();
@@ -40,22 +44,25 @@ namespace PracticeProject.WinForm
             var beShowButton = btns.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             int i = 0;
             int j = 0;
+            
+
             foreach (var item in beShowButton)
             {
                 Button btn = new Button();
-                btn.Width = 100;
-                btn.Height = 40;
+                btn.Width = btnWidth;
+                btn.Height = btnHeight;
                 btn.Text = item.Name;
-                btn.Left = i * (btn.Width + 10);
-                btn.Top = j * (btn.Height + 10);
+                btn.Left = i * (btn.Width + btnGap);
+                btn.Top = j * (btn.Height + btnGap);
 
-                if (panelButton.Width - btn.Right <= btn.Width)
+                if (panelButton.Width - btn.Left <= btn.Width)
                 {
                     i = 0;
                     j++;
-                    btn.Left = i * (btn.Width + 10);
-                    btn.Top = j * (btn.Height + 10);
+                    btn.Left = i * (btn.Width + btnGap);
+                    btn.Top = j * (btn.Height + btnGap);
                 }
+                
                 btn.Click += Btn_Click;
 
                 panelButton.Controls.Add(btn);

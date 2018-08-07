@@ -35,7 +35,7 @@
             // 
             // btnPre
             // 
-            this.btnPre.Location = new System.Drawing.Point(82, 361);
+            this.btnPre.Location = new System.Drawing.Point(103, 415);
             this.btnPre.Name = "btnPre";
             this.btnPre.Size = new System.Drawing.Size(75, 23);
             this.btnPre.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(540, 361);
+            this.btnNext.Location = new System.Drawing.Point(497, 415);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 1;
@@ -57,9 +57,10 @@
             // 
             this.panelButton.BackColor = System.Drawing.Color.Gainsboro;
             this.panelButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelButton.Location = new System.Drawing.Point(42, 46);
+            this.panelButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelButton.Location = new System.Drawing.Point(0, 0);
             this.panelButton.Name = "panelButton";
-            this.panelButton.Size = new System.Drawing.Size(643, 309);
+            this.panelButton.Size = new System.Drawing.Size(800, 395);
             this.panelButton.TabIndex = 3;
             // 
             // GeneratedButtonForm
