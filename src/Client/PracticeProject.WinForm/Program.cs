@@ -16,7 +16,7 @@ namespace PracticeProject.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormWebApi());
+            Application.Run(new DynamicallyGeneratedControl());
         }
     }
 }

@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="动态生成按钮\DynamicallyGeneratedControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="动态生成按钮\DynamicallyGeneratedControl.Designer.cs">
+      <DependentUpon>DynamicallyGeneratedControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormWebApi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="动态生成按钮\GeneratedButtonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="动态生成按钮\GeneratedButtonForm.Designer.cs">
+      <DependentUpon>GeneratedButtonForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="动态生成按钮\DynamicallyGeneratedControl.resx">
+      <DependentUpon>DynamicallyGeneratedControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormWebApi.resx">
       <DependentUpon>FormWebApi.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +89,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="动态生成按钮\GeneratedButtonForm.resx">
+      <DependentUpon>GeneratedButtonForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
