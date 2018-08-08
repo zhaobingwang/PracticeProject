@@ -21,7 +21,7 @@ namespace PracticeProject.WinForm
             InitializeComponent();
         }
         private static int pageIndex = 1;
-        private static int pageSize = 10;
+        private static int pageSize = 31;
         private static int total = 0;
         private static int totalPage = 0;
         private static int fakeTotal = 63;
@@ -66,6 +66,11 @@ namespace PracticeProject.WinForm
                     j++;
                     btn.Left = i * (btn.Width + btnGap) + paddingLeft;
                     btn.Top = j * (btn.Height + btnGap) + paddingTop;
+
+                    if (panelButton.Height - btn.Top <= btn.Height)
+                    {
+                        throw new WarningException("按钮设置超出容器范围，部分按钮不可见");
+                    }
                 }
 
 
