@@ -21,7 +21,7 @@ namespace PracticeProject.WinForm
             InitializeComponent();
         }
         private static int pageIndex = 1;
-        private static int pageSize = 21;
+        private static int pageSize = 10;
         private static int total = 0;
         private static int totalPage = 0;
         private static int fakeTotal = 63;
@@ -31,11 +31,11 @@ namespace PracticeProject.WinForm
         private static int btnGap = 10;
         private void GeneratedButtonForm_Load(object sender, EventArgs e)
         {
-            GeneratedButton();
+            GenerateButton();
         }
 
 
-        private void GeneratedButton()
+        private void GenerateButton()
         {
             panelButton.Controls.Clear();
             var btns = GetButtonList(fakeTotal);
@@ -109,7 +109,7 @@ namespace PracticeProject.WinForm
                 pageIndex = totalPage;
                 return;
             }
-            GeneratedButton();
+            GenerateButton();
         }
 
         private void btnPre_Click(object sender, EventArgs e)
@@ -122,7 +122,7 @@ namespace PracticeProject.WinForm
                 return;
             }
 
-            GeneratedButton();
+            GenerateButton();
         }
     }
 }
