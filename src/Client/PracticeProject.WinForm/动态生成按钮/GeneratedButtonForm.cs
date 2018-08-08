@@ -21,7 +21,7 @@ namespace PracticeProject.WinForm
             InitializeComponent();
         }
         private static int pageIndex = 1;
-        private static int pageSize = 12;
+        private static int pageSize = 21;
         private static int total = 0;
         private static int totalPage = 0;
         private static int fakeTotal = 63;
@@ -39,12 +39,17 @@ namespace PracticeProject.WinForm
         {
             panelButton.Controls.Clear();
             var btns = GetButtonList(fakeTotal);
+
+            // 居中算法，计算左，上内边距
+            int paddingLeft = (panelButton.Width % (btnWidth + btnGap) + btnGap) / 2;
+            int paddingTop = (panelButton.Height % (btnHeight + btnGap) + btnGap) / 2;
+
             total = fakeTotal;
             totalPage = (int)Math.Ceiling((decimal)total / pageSize);
             var beShowButton = btns.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             int i = 0;
             int j = 0;
-            
+
 
             foreach (var item in beShowButton)
             {
@@ -52,17 +57,18 @@ namespace PracticeProject.WinForm
                 btn.Width = btnWidth;
                 btn.Height = btnHeight;
                 btn.Text = item.Name;
-                btn.Left = i * (btn.Width + btnGap);
-                btn.Top = j * (btn.Height + btnGap);
+                btn.Left = i * (btn.Width + btnGap) + paddingLeft;
+                btn.Top = j * (btn.Height + btnGap) + paddingTop;
 
                 if (panelButton.Width - btn.Left <= btn.Width)
                 {
                     i = 0;
                     j++;
-                    btn.Left = i * (btn.Width + btnGap);
-                    btn.Top = j * (btn.Height + btnGap);
+                    btn.Left = i * (btn.Width + btnGap) + paddingLeft;
+                    btn.Top = j * (btn.Height + btnGap) + paddingTop;
                 }
-                
+
+
                 btn.Click += Btn_Click;
 
                 panelButton.Controls.Add(btn);
