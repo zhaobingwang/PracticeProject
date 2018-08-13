@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControl.Designer.cs">
+      <DependentUpon>CustomControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="动态生成按钮\DynamicallyGeneratedControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="动态生成按钮\GeneratedButtonForm.Designer.cs">
       <DependentUpon>GeneratedButtonForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomControl.resx">
+      <DependentUpon>CustomControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="动态生成按钮\DynamicallyGeneratedControl.resx">
       <DependentUpon>DynamicallyGeneratedControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +97,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="动态生成按钮\GeneratedButtonForm.resx">
       <DependentUpon>GeneratedButtonForm.cs</DependentUpon>
@@ -111,6 +121,10 @@
       <Project>{621f2791-316d-461a-9ce3-d4b506019b8d}</Project>
       <Name>Project.Framework.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\button.png" />
+    <Content Include="images\m_btn_bk_01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

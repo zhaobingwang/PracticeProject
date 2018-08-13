@@ -53,12 +53,24 @@ namespace PracticeProject.WinForm
 
             foreach (var item in beShowButton)
             {
+                //btnWidth = global::PracticeProject.WinForm.Properties.Resources.m_btn_bk_01.Width;
+                //btnHeight = global::PracticeProject.WinForm.Properties.Resources.m_btn_bk_01.Height;
                 Button btn = new Button();
                 btn.Width = btnWidth;
                 btn.Height = btnHeight;
                 btn.Text = item.Name;
                 btn.Left = i * (btn.Width + btnGap) + paddingLeft;
                 btn.Top = j * (btn.Height + btnGap) + paddingTop;
+
+                //btn.BackgroundImage = global::PracticeProject.WinForm.Properties.Resources.m_btn_bk_01;
+                //btn.BackgroundImageLayout = ImageLayout.Tile;
+                //btn.Width = btn.BackgroundImage.Width;
+                //btn.Height = btn.BackgroundImage.Height;
+                //btn.FlatAppearance.BorderSize = 0;
+                //btn.FlatStyle = FlatStyle.Flat;
+                //btn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+                //btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+                //btn.FlatAppearance.BorderColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 
                 if (panelButton.Width - btn.Left <= btn.Width)
                 {
