@@ -25,7 +25,7 @@ namespace PracticeProject.WinForm
             button1.Height = button1.BackgroundImage.Height;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button1.FlatAppearance.BorderColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            button1.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 0, 0);
         }
 
         private void button1_Click(object sender, EventArgs e)

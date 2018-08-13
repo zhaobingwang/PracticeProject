@@ -70,7 +70,7 @@ namespace PracticeProject.WinForm
                 //btn.FlatStyle = FlatStyle.Flat;
                 //btn.FlatAppearance.MouseDownBackColor = Color.Transparent;
                 //btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
-                //btn.FlatAppearance.BorderColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+                //btn.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 0, 0);
 
                 if (panelButton.Width - btn.Left <= btn.Width)
                 {
