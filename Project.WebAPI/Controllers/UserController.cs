@@ -12,6 +12,8 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using NLog;
+using Newtonsoft;
 
 namespace Project.WebAPI.Controllers
 {
@@ -19,6 +21,7 @@ namespace Project.WebAPI.Controllers
     {
         private MySqlContext db = new MySqlContext();
         public static RedisHelper redis = new RedisHelper(0);
+        private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         [HttpGet]
         public async Task<IHttpActionResult> GetUser(int userId)
@@ -28,6 +31,7 @@ namespace Project.WebAPI.Controllers
             {
                 return NotFound();
             }
+            logger.Info($"获取用户信息 UserId:【{userId}】\n{JsonConvert.SerializeObject(user)}");
             return Ok(user.ToResponse());
         }
 
@@ -117,7 +121,7 @@ namespace Project.WebAPI.Controllers
                 db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 try
                 {
-                    int result= await db.SaveChangesAsync();
+                    int result = await db.SaveChangesAsync();
                 }
                 catch (Exception ex)
                 {
