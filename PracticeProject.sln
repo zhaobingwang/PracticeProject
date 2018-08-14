@@ -46,6 +46,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.share", "3.share", "{9320
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProject.WinForm", "src\Client\PracticeProject.WinForm\PracticeProject.WinForm.csproj", "{38DDE614-DF38-4629-B17D-065E764FA573}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProject.WPF", "src\Client\PracticeProject.WPF\PracticeProject.WPF.csproj", "{32FA4BB6-0E9E-45C2-B53F-24C89DB76B85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{38DDE614-DF38-4629-B17D-065E764FA573}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38DDE614-DF38-4629-B17D-065E764FA573}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38DDE614-DF38-4629-B17D-065E764FA573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32FA4BB6-0E9E-45C2-B53F-24C89DB76B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32FA4BB6-0E9E-45C2-B53F-24C89DB76B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32FA4BB6-0E9E-45C2-B53F-24C89DB76B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32FA4BB6-0E9E-45C2-B53F-24C89DB76B85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +127,7 @@ Global
 		{4C68C55B-034D-41D1-ACA2-C12B8990E45B} = {2CABB2B0-8BC8-4ACA-B6DB-152F5E0C11D0}
 		{618EAFC3-2D67-46D2-BA38-E6A8716700B7} = {C878F0A8-C28C-457E-8E0C-0BBFBAF4B01A}
 		{38DDE614-DF38-4629-B17D-065E764FA573} = {7D4FC90D-D649-4E2C-B7A9-2237CB0A8386}
+		{32FA4BB6-0E9E-45C2-B53F-24C89DB76B85} = {7D4FC90D-D649-4E2C-B7A9-2237CB0A8386}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCC74296-FFDB-4B08-89F1-6365CF9C3EA0}
