@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PracticeProject.WinForm
 {
-    public partial class CustomControl : Form
+    public partial class CustomControl111 : Form
     {
-        public CustomControl()
+        public CustomControl111()
         {
             InitializeComponent();
         }

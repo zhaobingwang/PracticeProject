@@ -16,7 +16,7 @@ namespace PracticeProject.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomControl());
+            Application.Run(new temp());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PracticeProject.WinForm
 {
-    partial class CustomControl
+    partial class CustomControl111
     {
         /// <summary>
         /// Required designer variable.
