@@ -95,6 +95,9 @@
     <Compile Include="动态生成按钮\GeneratedButtonForm.Designer.cs">
       <DependentUpon>GeneratedButtonForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CallCmd.resx">
+      <DependentUpon>CallCmd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControl111.resx">
       <DependentUpon>CustomControl111.cs</DependentUpon>
     </EmbeddedResource>
