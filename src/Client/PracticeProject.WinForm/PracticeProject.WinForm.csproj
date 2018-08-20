@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallCmd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallCmd.Designer.cs">
+      <DependentUpon>CallCmd.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControl.cs">
       <SubType>Form</SubType>
     </Compile>
