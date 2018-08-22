@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
+using System.Diagnostics;
 
 namespace PracticeProject.WinForm
 {
@@ -18,25 +19,71 @@ namespace PracticeProject.WinForm
     {
         public GeneratedButtonForm()
         {
+            //            this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+            //ControlStyles.UserPaint | ControlStyles.DoubleBuffer, true);
             InitializeComponent();
+
+
+            //this.BackgroundImage = Properties.Resources._11;
+            //this.BackgroundImageLayout = ImageLayout.Tile;
+
+            PictureBox pictureBox1 = new PictureBox();
+            pictureBox1.Name = "asdad";
+            pictureBox1.Image = Properties.Resources._11;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.SendToBack();
+            //pictureBox1.Parent = this;
+
+            this.Controls.Add(pictureBox1);
+
+
+
+            //pictureBox1.Parent = pictureBox1;
+            int i = 0;
+            while (this.Controls.Count>1 && i<10000)
+            {
+                if (Controls[0].Name != "asdad")
+                {
+                    Controls[0].Parent = pictureBox1;
+                }
+                i++;
+            }
+            MessageBox.Show(i.ToString());
+
         }
         private static int pageIndex = 1;
-        private static int pageSize = 31;
+        private static int pageSize = 30;
         private static int total = 0;
         private static int totalPage = 0;
-        private static int fakeTotal = 63;
+        private static int fakeTotal = 200;
 
-        private static int btnWidth = 100;
+        private static int btnWidth = 200;
         private static int btnHeight = 100;
-        private static int btnGap = 10;
+        private static int btnGap = 30;
         private void GeneratedButtonForm_Load(object sender, EventArgs e)
         {
-            GenerateButton();
-        }
 
+        }
+        /// <summary>
+        /// 防止闪屏
+        /// </summary>
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams paras = base.CreateParams;
+                paras.ExStyle |= 0x02000000;
+                return paras;
+            }
+        }
 
         private void GenerateButton()
         {
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+
+
             panelButton.Controls.Clear();
             var btns = GetButtonList(fakeTotal);
 
@@ -44,11 +91,11 @@ namespace PracticeProject.WinForm
             int paddingLeft = (panelButton.Width % (btnWidth + btnGap) + btnGap) / 2;
             int paddingTop = (panelButton.Height % (btnHeight + btnGap) + btnGap) / 2;
 
-            total = fakeTotal;
+            total = btns.Count();
             totalPage = (int)Math.Ceiling((decimal)total / pageSize);
             var beShowButton = btns.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
-            int i = 0;
-            int j = 0;
+            int x = 0;
+            int y = 0;
 
 
             foreach (var item in beShowButton)
@@ -59,8 +106,11 @@ namespace PracticeProject.WinForm
                 btn.Width = btnWidth;
                 btn.Height = btnHeight;
                 btn.Text = item.Name;
-                btn.Left = i * (btn.Width + btnGap) + paddingLeft;
-                btn.Top = j * (btn.Height + btnGap) + paddingTop;
+                btn.Font = new Font("宋体", 14);
+                btn.Name = $"btn_{item.Id}";
+                btn.Left = x * (btn.Width + btnGap) + paddingLeft;
+                btn.Top = y * (btn.Height + btnGap) + paddingTop;
+                btn.Tag = item;
 
                 //btn.BackgroundImage = global::PracticeProject.WinForm.Properties.Resources.m_btn_bk_01;
                 //btn.BackgroundImageLayout = ImageLayout.Tile;
@@ -72,12 +122,13 @@ namespace PracticeProject.WinForm
                 //btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
                 //btn.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 0, 0);
 
+                // 换行
                 if (panelButton.Width - btn.Left <= btn.Width)
                 {
-                    i = 0;
-                    j++;
-                    btn.Left = i * (btn.Width + btnGap) + paddingLeft;
-                    btn.Top = j * (btn.Height + btnGap) + paddingTop;
+                    x = 0;
+                    y++;
+                    btn.Left = x * (btn.Width + btnGap) + paddingLeft;
+                    btn.Top = y * (btn.Height + btnGap) + paddingTop;
 
                     if (panelButton.Height - btn.Top <= btn.Height)
                     {
@@ -89,14 +140,21 @@ namespace PracticeProject.WinForm
                 btn.Click += Btn_Click;
 
                 panelButton.Controls.Add(btn);
-                i++;
+                x++;
             }
+
+            watch.Stop();
+            label1.Text = $"{watch.ElapsedMilliseconds} ms";
         }
 
         private void Btn_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            MessageBox.Show(button.Text);
+            if (button != null)
+            {
+                DynamicallyGeneratedControl f = new DynamicallyGeneratedControl();
+                f.Show();
+            }
         }
 
         private List<ButtonGroup> GetButtonList(int count)
@@ -139,6 +197,11 @@ namespace PracticeProject.WinForm
                 return;
             }
 
+            GenerateButton();
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
             GenerateButton();
         }
     }
