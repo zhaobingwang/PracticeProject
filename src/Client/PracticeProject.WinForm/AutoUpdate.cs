@@ -84,7 +84,7 @@ namespace PracticeProject.WinForm
                             ad.Update();
                             MessageBox.Show("正在更新中，将在之后重启应用程序。");
                             Application.Restart();
-                            this.Close();
+                            Environment.Exit(0);
                         }
                         catch (DeploymentDownloadException dde)
                         {
