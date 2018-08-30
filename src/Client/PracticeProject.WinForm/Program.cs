@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PracticeProject.WinForm.AutoUpdateDemo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace PracticeProject.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AutoUpdate());
+            Application.Run(new AutoUpdaterDotNet());
         }
     }
 }
