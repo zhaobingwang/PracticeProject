@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.8.7" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.14.0" />
   </ItemGroup>
 
 </Project>

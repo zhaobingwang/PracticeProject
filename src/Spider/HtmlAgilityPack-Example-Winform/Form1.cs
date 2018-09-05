@@ -38,10 +38,8 @@ namespace HtmlAgilityPack_Example_Winform
                 // WAIT until the dynamic text is set
                 return !html.Contains("<div class=\"article-content\"></div>");
             });
-            var t2 = doc2.DocumentNode.SelectSingleNode("//div[@class=article-content]").InnerText;
-
-            //MessageBox.Show("Text 1: " + t1);
-            MessageBox.Show("Text 2: " + t2);
+            var t2 = doc2.DocumentNode.SelectSingleNode("//div[@class='article-content']").InnerText;
+            richTextBox1.Text = t2;
         }
     }
 }
