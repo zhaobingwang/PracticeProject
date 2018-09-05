@@ -48,11 +48,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProject.WinForm", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProject.WPF", "src\Client\PracticeProject.WPF\PracticeProject.WPF.csproj", "{32FA4BB6-0E9E-45C2-B53F-24C89DB76B85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlAgilityPack-Example", "src\Spider\HtmlAgilityPack-Example\HtmlAgilityPack-Example.csproj", "{5CE3FF5D-8A5D-4362-B7B2-B018D74127C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlAgilityPack-Example", "src\Spider\HtmlAgilityPack-Example\HtmlAgilityPack-Example.csproj", "{5CE3FF5D-8A5D-4362-B7B2-B018D74127C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Spider", "6.Spider", "{E5E28905-796D-43B9-899C-B16F47CBDF19}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlAgilityPack-Example-Winform", "src\Spider\HtmlAgilityPack-Example-Winform\HtmlAgilityPack-Example-Winform.csproj", "{E1A7FE41-576D-4B8E-AD0F-9EE12DCC1469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProject.MQ.Standard", "src\PracticeProject.MQ.Standard\PracticeProject.MQ.Standard.csproj", "{C3061A83-960E-4899-82A6-6BE484EE9A2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -124,6 +126,10 @@ Global
 		{E1A7FE41-576D-4B8E-AD0F-9EE12DCC1469}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1A7FE41-576D-4B8E-AD0F-9EE12DCC1469}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1A7FE41-576D-4B8E-AD0F-9EE12DCC1469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3061A83-960E-4899-82A6-6BE484EE9A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3061A83-960E-4899-82A6-6BE484EE9A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3061A83-960E-4899-82A6-6BE484EE9A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3061A83-960E-4899-82A6-6BE484EE9A2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,6 +150,7 @@ Global
 		{32FA4BB6-0E9E-45C2-B53F-24C89DB76B85} = {7D4FC90D-D649-4E2C-B7A9-2237CB0A8386}
 		{5CE3FF5D-8A5D-4362-B7B2-B018D74127C8} = {E5E28905-796D-43B9-899C-B16F47CBDF19}
 		{E1A7FE41-576D-4B8E-AD0F-9EE12DCC1469} = {E5E28905-796D-43B9-899C-B16F47CBDF19}
+		{C3061A83-960E-4899-82A6-6BE484EE9A2E} = {932015F0-12D2-43E7-AC24-2568B32F188F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCC74296-FFDB-4B08-89F1-6365CF9C3EA0}

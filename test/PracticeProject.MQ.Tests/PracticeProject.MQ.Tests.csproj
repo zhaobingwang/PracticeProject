@@ -72,6 +72,10 @@
       <Project>{69970d07-698c-4f02-8578-db67245bfc23}</Project>
       <Name>PracticeProject.Share</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\PracticeProject.MQ.Standard\PracticeProject.MQ.Standard.csproj">
+      <Project>{c3061a83-960e-4899-82a6-6be484ee9a2e}</Project>
+      <Name>PracticeProject.MQ.Standard</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\PracticeProject.MQ\PracticeProject.MQ.csproj">
       <Project>{4c68c55b-034d-41d1-aca2-c12b8990e45b}</Project>
       <Name>PracticeProject.MQ</Name>
