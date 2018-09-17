@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Hangfire;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -18,6 +15,8 @@ namespace Project.WebMVC
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             MvcHandler.DisableMvcResponseHeader = true; //隐藏ASP.NET MVC版本
+
+            GlobalConfiguration.Configuration.UseSqlServerStorage("<name or connection string>");
         }
     }
 }
