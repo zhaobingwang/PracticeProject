@@ -16,7 +16,7 @@ namespace Project.WebMVC
 
             MvcHandler.DisableMvcResponseHeader = true; //隐藏ASP.NET MVC版本
 
-            GlobalConfiguration.Configuration.UseSqlServerStorage("<name or connection string>");
+            //GlobalConfiguration.Configuration.UseSqlServerStorage("Data Source = localhost;Initial Catalog = Example01;User Id = sa_test;Password = 123456;");
         }
     }
 }
