@@ -39,5 +39,21 @@ namespace PracticeProject.WinForm
             });
             t.Start();
         }
+
+        private void temp_Load(object sender, EventArgs e)
+        {
+            Task t = Task.Factory.StartNew(() =>
+            {
+                Thread.Sleep(3000);
+
+            });
+            t.Wait();
+        }
+
+        private void test_Click(object sender, EventArgs e)
+        {
+            temp2 temp2 = new temp2();
+            temp2.ShowDialog();
+        }
     }
 }

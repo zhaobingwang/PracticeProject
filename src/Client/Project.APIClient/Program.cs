@@ -30,15 +30,16 @@ namespace Project.APIClient
             }
 
             #region MyRegion
-            //Task t1 = Task.Run(() =>
-            //{
-            //    var client = new HttpClient();
-            //    client.BaseAddress = new Uri(baseUri);
-            //    var response = client.GetAsync("iisthread/get").Result;
-            //    Console.WriteLine($" {response.StatusCode} \t {response.Content.ReadAsStringAsync().Result} \t {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss fff")}");
-            //}).ContinueWith((t) => {
-            //    Console.WriteLine($"aa:{t.Exception.InnerException.Message}");
-            //}, TaskContinuationOptions.OnlyOnFaulted); 
+            Task t1 = Task.Run(() =>
+            {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(baseUri);
+                var response = client.GetAsync("iisthread/get").Result;
+                Console.WriteLine($" {response.StatusCode} \t {response.Content.ReadAsStringAsync().Result} \t {DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss fff")}");
+            }).ContinueWith((t) =>
+            {
+                Console.WriteLine($"aa:{t.Exception.InnerException.Message}");
+            }, TaskContinuationOptions.OnlyOnFaulted);
             #endregion
 
 
