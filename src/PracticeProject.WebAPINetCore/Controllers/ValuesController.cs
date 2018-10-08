@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PracticeProject.WebAPINetCore.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    //[Route("api/[controller]")]
+    //[ApiController]
     public class ValuesController : ControllerBase
     {
         // GET api/values
@@ -40,6 +40,44 @@ namespace PracticeProject.WebAPINetCore.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+    }
+
+    [ApiVersion("1.0", Deprecated = true)]
+    [Route("api/values")]
+    //[Route("api/{v:apiVersion}/values")]
+    [ApiController]
+    public class ValuesV1Controller : ControllerBase
+    {
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "Value1 from version1", "Value2 from version1" };
+        }
+    }
+
+    [ApiVersion("2.0")]
+    [Route("api/values")]
+    //[Route("api/{v:apiVersion}/values")]
+    [ApiController]
+    public class ValuesV2Controller : ControllerBase
+    {
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "Value1 from version2", "Value2 from version2" };
+        }
+    }
+
+    [ApiVersionNeutral]
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ValuesNoVersionController : ControllerBase
+    {
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1 ", "value2" };
         }
     }
 }
