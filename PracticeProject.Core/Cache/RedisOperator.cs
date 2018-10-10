@@ -4,6 +4,7 @@ using System.Text;
 using StackExchange.Redis;
 using Newtonsoft.Json;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PracticeProject.Core.Cache
 {
@@ -29,7 +30,7 @@ namespace PracticeProject.Core.Cache
         }
         #endregion ctor
 
-        #region String-同步方法
+        #region String-Synchronization methods
         /// <summary>
         /// 保存单个Key,Value
         /// </summary>
@@ -48,7 +49,6 @@ namespace PracticeProject.Core.Cache
         /// </summary>
         /// <param name="keyValues">Redis键值对</param>
         /// <returns></returns>
-
         public bool StringSet(List<KeyValuePair<RedisKey, RedisValue>> keyValues)
         {
             List<KeyValuePair<RedisKey, RedisValue>> newKeyValues = keyValues.Select(r => new KeyValuePair<RedisKey, RedisValue>(AddSysCustomKey(r.Key), r.Value)).ToList();
@@ -67,7 +67,7 @@ namespace PracticeProject.Core.Cache
         {
             key = AddSysCustomKey(key);
             string json = ConvertToJson(obj);
-            return Do(r => r.StringSet(key, json, expiry));
+            return Do(db => db.StringSet(key, json, expiry));
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace PracticeProject.Core.Cache
         public string StringGet(string key)
         {
             key = AddSysCustomKey(key);
-            return Do(r => r.StringGet(key));
+            return Do(db => db.StringGet(key));
         }
 
         /// <summary>
@@ -127,11 +127,109 @@ namespace PracticeProject.Core.Cache
             key = AddSysCustomKey(key);
             return Do(db => db.StringDecrement(key, val));
         }
-        #endregion String-同步方法
+        #endregion String-Synchronization methods
 
-        #region String-异步方法
+        #region String-Asynchronous methods
 
-        #endregion String-异步方法
+        /// <summary>
+        /// 保存单个Key,Value
+        /// </summary>
+        /// <param name="key">Redis键</param>
+        /// <param name="value">Redis值</param>
+        /// <param name="expiry">过期时间</param>
+        /// <returns></returns>
+        public async Task<bool> StringSetAsync(string key, string value, TimeSpan? expiry = default(TimeSpan?))
+        {
+            key = AddSysCustomKey(key);
+            return await Do(db => db.StringSetAsync(key, value, expiry));
+        }
+        /// <summary>
+        /// 保存多个Key,Value
+        /// </summary>
+        /// <param name="keyValues">Redis键值对</param>
+        /// <returns></returns>
+        public async Task<bool> StringSetAsync(List<KeyValuePair<RedisKey, RedisValue>> keyValues)
+        {
+            var newKeyValues = keyValues.Select(r => new KeyValuePair<RedisKey, RedisValue>(AddSysCustomKey(r.Key), r.Value)).ToList();
+            return await Do(db => db.StringSetAsync(newKeyValues.ToArray()));
+        }
+
+
+        /// <summary>
+        /// 保存一个对象
+        /// </summary>
+        /// <typeparam name="T">对象</typeparam>
+        /// <param name="key">Redis键</param>
+        /// <param name="obj">对象</param>
+        /// <param name="expiry">过期时间</param>
+        /// <returns></returns>
+        public async Task<bool> StringSetAsync<T>(string key, T obj, TimeSpan? expiry = default(TimeSpan?))
+        {
+            key = AddSysCustomKey(key);
+            string json = ConvertToJson(obj);
+            return await Do(db => db.StringSetAsync(key, json, expiry));
+        }
+
+        /// <summary>
+        /// 获取单个key值
+        /// </summary>
+        /// <param name="key">Redis键</param>
+        /// <returns></returns>
+        public async Task<string> StringGetAsync(string key)
+        {
+            key = AddSysCustomKey(key);
+            return await Do(db => db.StringGetAsync(key));
+        }
+
+        /// <summary>
+        /// 获取多个key的值
+        /// </summary>
+        /// <param name="listKey">Redis键集合</param>
+        /// <returns></returns>
+        public async Task<RedisValue[]> StringGetAsync(List<string> listKey)
+        {
+            List<string> newKeys = listKey.Select(AddSysCustomKey).ToList();
+            return await Do(db => db.StringGetAsync(ConvertToRedisKeys(newKeys)));
+        }
+
+        /// <summary>
+        /// 获取一个key的对象
+        /// </summary>
+        /// <typeparam name="T">对象</typeparam>
+        /// <param name="key">Redis键</param>
+        /// <returns>对象</returns>
+        public async Task<T> StringGetAsync<T>(string key)
+        {
+            key = AddSysCustomKey(key);
+            string result = await Do(db => db.StringGetAsync(key));
+            return ConvertToObj<T>(result);
+        }
+
+        /// <summary>
+        /// 为数字增加val
+        /// </summary>
+        /// <param name="key">Redis键</param>
+        /// <param name="val">增加的值，可为负</param>
+        /// <returns>增加后的值</returns>
+        public async Task<double> StringIncrementAsync(string key, double val = 1)
+        {
+            key = AddSysCustomKey(key);
+            return await Do(db => db.StringIncrementAsync(key, val));
+        }
+
+        /// <summary>
+        /// 为数字减少val
+        /// </summary>
+        /// <param name="key">Redis键</param>
+        /// <param name="val">减少的值，可为负</param>
+        /// <returns>减少后的值</returns>
+        public async Task<double> StringDecrementAsync(string key, double val = 1)
+        {
+            key = AddSysCustomKey(key);
+            return await Do(db => db.StringDecrementAsync(key, val));
+        }
+
+        #endregion String-Asynchronous methods
 
         #region private method
         private string AddSysCustomKey(string oldKey)
