@@ -58,6 +58,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeProject.MQ.Standard
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProject.WebAPINetCore", "src\PracticeProject.WebAPINetCore\PracticeProject.WebAPINetCore.csproj", "{BCBCAA18-B724-4EA2-8080-3DB1454F6BB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProject.Core.Tests", "test\PracticeProject.Core.Tests\PracticeProject.Core.Tests.csproj", "{B831714B-24A2-4850-97EF-639E1FC52E32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -136,6 +138,10 @@ Global
 		{BCBCAA18-B724-4EA2-8080-3DB1454F6BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCBCAA18-B724-4EA2-8080-3DB1454F6BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCBCAA18-B724-4EA2-8080-3DB1454F6BB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B831714B-24A2-4850-97EF-639E1FC52E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B831714B-24A2-4850-97EF-639E1FC52E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B831714B-24A2-4850-97EF-639E1FC52E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B831714B-24A2-4850-97EF-639E1FC52E32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,6 +164,7 @@ Global
 		{E1A7FE41-576D-4B8E-AD0F-9EE12DCC1469} = {E5E28905-796D-43B9-899C-B16F47CBDF19}
 		{C3061A83-960E-4899-82A6-6BE484EE9A2E} = {932015F0-12D2-43E7-AC24-2568B32F188F}
 		{BCBCAA18-B724-4EA2-8080-3DB1454F6BB2} = {5E3D29E3-03C8-4B98-8399-ED5360A717E5}
+		{B831714B-24A2-4850-97EF-639E1FC52E32} = {C878F0A8-C28C-457E-8E0C-0BBFBAF4B01A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCC74296-FFDB-4B08-89F1-6365CF9C3EA0}
