@@ -9,13 +9,14 @@ namespace PracticeProject.Core.Cache
 {
     public class RedisManager
     {
+        public static readonly string SysCustomKey = ConfigurationManager.AppSettings["redisKey"] ?? "";
+
         private static ConnectionMultiplexer _instance;
         private static readonly object Locker = new object();
         private static readonly string RedisConnectionString = ConfigurationManager.ConnectionStrings["RedisExchangeHosts"].ConnectionString;
         private static readonly ConcurrentDictionary<string, ConnectionMultiplexer> ConnectionCache = new ConcurrentDictionary<string, ConnectionMultiplexer>();
 
-        private int DbNum { get; }
-        public static ConnectionMultiplexer Instance
+        public static ConnectionMultiplexer GetInstance
         {
             get
             {
@@ -111,7 +112,7 @@ namespace PracticeProject.Core.Cache
         }
         #endregion
 
-        private static ConnectionMultiplexer GetConnectionMultiplexer(string connectionString = null)
+        public static ConnectionMultiplexer GetConnectionMultiplexer(string connectionString = null)
         {
             if (!ConnectionCache.ContainsKey(connectionString))
             {
