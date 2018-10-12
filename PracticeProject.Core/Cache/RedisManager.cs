@@ -13,7 +13,7 @@ namespace PracticeProject.Core.Cache
 
         private static ConnectionMultiplexer _instance;
         private static readonly object Locker = new object();
-        private static readonly string RedisConnectionString = ConfigurationManager.ConnectionStrings["RedisExchangeHosts"].ConnectionString;
+        private static readonly string RedisConnectionString = ConfigurationManager.ConnectionStrings["RedisExchangeHosts"]?.ConnectionString;
         private static readonly ConcurrentDictionary<string, ConnectionMultiplexer> ConnectionCache = new ConcurrentDictionary<string, ConnectionMultiplexer>();
 
         public static ConnectionMultiplexer GetInstance
