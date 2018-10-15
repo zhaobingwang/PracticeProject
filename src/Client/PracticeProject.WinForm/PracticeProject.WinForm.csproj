@@ -228,6 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AutoSize\" />
+    <Folder Include="MultiThreading\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
