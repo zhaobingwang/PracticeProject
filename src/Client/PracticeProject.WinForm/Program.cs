@@ -17,7 +17,7 @@ namespace PracticeProject.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new temp2());
+            Application.Run(new MultiThreading.TaskInWinform());
         }
     }
 }
