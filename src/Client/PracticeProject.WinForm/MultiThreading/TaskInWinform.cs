@@ -53,5 +53,16 @@ namespace PracticeProject.WinForm.MultiThreading
         {
             Thread.Sleep(3000);
         }
+
+        private async void btnRunTask_Click(object sender, EventArgs e)
+        {
+            btnRunTask.Enabled = false;
+
+            lblRunTaskMessage.Text = "start";
+            await Task.Delay(3000);
+
+            lblRunTaskMessage.Text = "end";
+            btnRunTask.Enabled = true;
+        }
     }
 }
