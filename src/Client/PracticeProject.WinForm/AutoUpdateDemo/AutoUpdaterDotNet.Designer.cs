@@ -30,6 +30,7 @@
         {
             this.checkNewVersion = new System.Windows.Forms.Button();
             this.version = new System.Windows.Forms.Label();
+            this.btnUpdateManually = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkNewVersion
@@ -51,11 +52,22 @@
             this.version.TabIndex = 1;
             this.version.Text = "version";
             // 
+            // btnUpdateManually
+            // 
+            this.btnUpdateManually.Location = new System.Drawing.Point(363, 214);
+            this.btnUpdateManually.Name = "btnUpdateManually";
+            this.btnUpdateManually.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateManually.TabIndex = 2;
+            this.btnUpdateManually.Text = "手动更新";
+            this.btnUpdateManually.UseVisualStyleBackColor = true;
+            this.btnUpdateManually.Click += new System.EventHandler(this.btnUpdateManually_Click);
+            // 
             // AutoUpdaterDotNet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdateManually);
             this.Controls.Add(this.version);
             this.Controls.Add(this.checkNewVersion);
             this.Name = "AutoUpdaterDotNet";
@@ -69,5 +81,6 @@
 
         private System.Windows.Forms.Button checkNewVersion;
         private System.Windows.Forms.Label version;
+        private System.Windows.Forms.Button btnUpdateManually;
     }
 }

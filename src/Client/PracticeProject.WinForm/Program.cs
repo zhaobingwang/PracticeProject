@@ -17,7 +17,7 @@ namespace PracticeProject.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MultiThreading.TaskInWinform());
+            Application.Run(new AutoUpdaterDotNet());
         }
     }
 }
