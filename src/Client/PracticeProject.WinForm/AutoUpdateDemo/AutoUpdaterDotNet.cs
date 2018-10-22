@@ -42,7 +42,7 @@ namespace PracticeProject.WinForm.AutoUpdateDemo
             if (args != null)
             {
                 // 有可用更新
-                if (args.IsUpdateAvailable)
+                if (args.IsUpdateAvailable) 
                 {
                     try
                     {
