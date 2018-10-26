@@ -119,6 +119,12 @@
     <Compile Include="MultiThreading\TaskInWinform.Designer.cs">
       <DependentUpon>TaskInWinform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Printer\Printer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printer\Printer.Designer.cs">
+      <DependentUpon>Printer.cs</DependentUpon>
+    </Compile>
     <Compile Include="temp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MultiThreading\TaskInWinform.resx">
       <DependentUpon>TaskInWinform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printer\Printer.resx">
+      <DependentUpon>Printer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="temp.resx">
       <DependentUpon>temp.cs</DependentUpon>
