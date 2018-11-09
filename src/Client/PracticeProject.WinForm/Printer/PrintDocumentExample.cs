@@ -215,7 +215,6 @@ namespace PracticeProject.WinForm.Printer
             {
                 stringToPrint = reader.ReadToEnd();
             }
-
         }
 
         private void pdMultiPage_PrintPage(object sender, PrintPageEventArgs e)
@@ -239,5 +238,19 @@ namespace PracticeProject.WinForm.Printer
             e.HasMorePages = (stringToPrint.Length > 0);
         }
         #endregion
+
+        #region 如何：在 Windows 窗体中打印图形
+        private PrintDocument pdGraphics = new PrintDocument();
+        private void btnPrintGraphics_Click(object sender, EventArgs e)
+        {
+            this.pdGraphics.PrintPage += new PrintPageEventHandler(pd_PrintGraphics);
+            pdGraphics.Print();
+        }
+        private void pd_PrintGraphics(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.FillRectangle(Brushes.Blue, new Rectangle(100, 100, 200, 200));
+        }
+        #endregion
+
     }
 }

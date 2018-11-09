@@ -31,6 +31,7 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnPrintFromTxtFile = new System.Windows.Forms.Button();
             this.brnPrintMultiPageTextFile = new System.Windows.Forms.Button();
+            this.btnPrintGraphics = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPrint
@@ -65,11 +66,23 @@
             this.brnPrintMultiPageTextFile.UseVisualStyleBackColor = true;
             this.brnPrintMultiPageTextFile.Click += new System.EventHandler(this.brnPrintMultiPageTextFile_Click);
             // 
+            // btnPrintGraphics
+            // 
+            this.btnPrintGraphics.Font = new System.Drawing.Font("宋体", 18F);
+            this.btnPrintGraphics.Location = new System.Drawing.Point(325, 255);
+            this.btnPrintGraphics.Name = "btnPrintGraphics";
+            this.btnPrintGraphics.Size = new System.Drawing.Size(234, 80);
+            this.btnPrintGraphics.TabIndex = 3;
+            this.btnPrintGraphics.Text = "在 Windows 窗体中打印图形";
+            this.btnPrintGraphics.UseVisualStyleBackColor = true;
+            this.btnPrintGraphics.Click += new System.EventHandler(this.btnPrintGraphics_Click);
+            // 
             // PrintDocumentExample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPrintGraphics);
             this.Controls.Add(this.brnPrintMultiPageTextFile);
             this.Controls.Add(this.btnPrintFromTxtFile);
             this.Controls.Add(this.btnPrint);
@@ -84,5 +97,6 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnPrintFromTxtFile;
         private System.Windows.Forms.Button brnPrintMultiPageTextFile;
+        private System.Windows.Forms.Button btnPrintGraphics;
     }
 }
