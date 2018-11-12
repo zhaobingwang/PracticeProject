@@ -244,7 +244,8 @@ namespace PracticeProject.WinForm.Printer
         private void btnPrintGraphics_Click(object sender, EventArgs e)
         {
             this.pdGraphics.PrintPage += new PrintPageEventHandler(pd_PrintGraphics);
-            pdGraphics.Print();
+            //pdGraphics.Print();   // 使用ShowPrintPreviewDialog(pdGraphics);进行预览打印
+            ShowPrintPreviewDialog(pdGraphics);
         }
         private void pd_PrintGraphics(object sender, PrintPageEventArgs e)
         {
@@ -252,5 +253,14 @@ namespace PracticeProject.WinForm.Printer
         }
         #endregion
 
+        #region 如何：使用打印预览在 Windows 窗体中进行打印
+        private PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+
+        private void ShowPrintPreviewDialog(PrintDocument printDocument)
+        {
+            printPreviewDialog.Document = printDocument;
+            printPreviewDialog.ShowDialog();
+        }
+        #endregion
     }
 }
