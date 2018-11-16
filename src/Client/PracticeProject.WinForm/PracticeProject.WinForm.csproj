@@ -125,6 +125,12 @@
     <Compile Include="CustomControl\CurrentDateTimeLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControl\LabelEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\LabelEx.Designer.cs">
+      <DependentUpon>LabelEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="MultiThreading\TaskInWinform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\ButtonEx.resx">
       <DependentUpon>ButtonEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\LabelEx.resx">
+      <DependentUpon>LabelEx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MultiThreading\TaskInWinform.resx">
       <DependentUpon>TaskInWinform.cs</DependentUpon>

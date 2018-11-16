@@ -26,7 +26,14 @@ namespace PracticeProject.WinForm.CustomControlDemo
             buttonEx.Height = 100;
             buttonEx.Left = 10;
             buttonEx.Top = 10;
+            buttonEx.BorderStyle = BorderStyle.FixedSingle;
             this.Controls.Add(buttonEx);
+
+            LabelEx labelEx = new LabelEx("这个是{[重点]}内容");
+            labelEx.Left = buttonEx.Left + buttonEx.Width + 100;
+            labelEx.Top = 10;
+            labelEx.BorderStyle = BorderStyle.FixedSingle;
+            this.Controls.Add(labelEx);
         }
     }
 }
