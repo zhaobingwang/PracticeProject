@@ -17,7 +17,7 @@ namespace PracticeProject.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Printer.PrintDocumentExample());
+            Application.Run(new CustomControlDemo.Demo());
         }
     }
 }
