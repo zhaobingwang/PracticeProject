@@ -12,9 +12,13 @@ namespace PracticeProject.WinForm.CustomControl
 {
     public partial class LabelEx : UserControl
     {
+        private Font _fontPrimary;
+        private Font _fontMinor;
+        private int _gapX;
+        string[] str;
         public LabelEx()
         {
-
+            InitializeComponent();
         }
         public LabelEx(string text, Font fontPrimary = null, Font fontMinor = null, int gapX = -5) : this()
         {
@@ -26,21 +30,29 @@ namespace PracticeProject.WinForm.CustomControl
             {
                 throw new Exception("not supported value.");
             }
-            InitializeComponent();
             // format:这个是{[重点]}内容"
-            string[] str = text.Split(new char[2] { '{', '}' });
+            str = text.Split(new char[2] { '{', '}' });
+
+            if (fontPrimary == null)
+                _fontPrimary = new Font("黑体", 20, FontStyle.Bold);
+            if (fontMinor == null)
+                _fontMinor = new Font("黑体", 14);
+        }
+
+        private void LabelEx_Resize(object sender, EventArgs e)
+        {
+        }
+
+        private void LabelEx_Load(object sender, EventArgs e)
+        {
             int left = 0;
             int top = 0;
-            if (fontPrimary == null)
-                fontPrimary = new Font("黑体", 20, FontStyle.Bold);
-            if (fontMinor == null)
-                fontMinor = new Font("黑体", 14);
-
-            int gapY = (int)(fontPrimary.GetHeight() - fontMinor.GetHeight());
+            int gapY = (int)(_fontPrimary.GetHeight() - _fontMinor.GetHeight());
             int totalWidth = 0;
-            int maxHeight = fontPrimary.Height;
+            int maxHeight = this.Height;
 
             this.Height = maxHeight;
+            panel1.Width = 0;
             foreach (var item in str)
             {
                 Label lbl = new Label();
@@ -50,30 +62,28 @@ namespace PracticeProject.WinForm.CustomControl
                 lbl.Padding = new Padding(0, 0, 0, 0);
                 if (item.IndexOf('[') >= 0)
                 {
-                    lbl.Font = fontPrimary;
+                    lbl.Font = _fontPrimary;
                     lbl.Text = item.Substring(1, item.Length - 2);
                     top = (this.Height - lbl.Height - gapY) / 2;
                 }
                 else
                 {
-                    lbl.Font = fontMinor;
+                    lbl.Font = _fontMinor;
                     lbl.Text = item;
                     top = (this.Height - lbl.Height) / 2;
                 }
 
                 lbl.Left = left;
                 lbl.Top = top;
-                this.Controls.Add(lbl);
-
-                left += lbl.Width + gapX;
+                this.panel1.Controls.Add(lbl);
+                panel1.Width += lbl.Width;
+                left += lbl.Width + _gapX;
                 totalWidth += lbl.Width;
             }
-            this.Width = totalWidth;
-        }
-
-        private void LabelEx_Resize(object sender, EventArgs e)
-        {
-
+            //this.Width = totalWidth;
+            panel1.Height = maxHeight;
+            panel1.Left = (this.Width - panel1.Width) / 2;
+            panel1.Top = (this.Height - panel1.Height) / 2;
         }
     }
 }

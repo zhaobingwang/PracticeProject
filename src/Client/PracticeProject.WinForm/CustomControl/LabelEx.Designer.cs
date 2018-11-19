@@ -28,19 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(106, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(89, 32);
+            this.panel1.TabIndex = 0;
             // 
             // LabelEx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Name = "LabelEx";
             this.Size = new System.Drawing.Size(449, 64);
+            this.Load += new System.EventHandler(this.LabelEx_Load);
             this.Resize += new System.EventHandler(this.LabelEx_Resize);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
     }
 }

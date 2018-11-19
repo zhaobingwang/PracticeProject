@@ -14,43 +14,59 @@ namespace PracticeProject.WinForm.CustomControl
     {
         private double percentOfTop = 0.4;
         private double percentOfBottom = 0.6;
+
+        LabelEx labelEx;
+        bool _useLabelEx;
         public ButtonEx()
         {
             InitializeComponent();
         }
-        public ButtonEx(string topText, string bottomText) : this()
+        public ButtonEx(string topText, string bottomText, bool useLabelEx) : this()
         {
+            _useLabelEx = useLabelEx;
             lblTop.Text = topText;
             lblBottom.Text = bottomText;
+            if (_useLabelEx)
+            {
+                //lblBottom.Dispose();
+                //lblBottom = null;
+                this.panelMain.Controls.Remove(lblBottom);
+                labelEx = new LabelEx(bottomText);
+                labelEx.Height = (int)(percentOfBottom * this.panelMain.Height);
+                labelEx.Left = 0;
+                labelEx.Top = this.panelMain.Height - labelEx.Height;
+                labelEx.Dock = DockStyle.Bottom;
+                labelEx.BackColor = Color.FromArgb(255, 255, 255);
+                this.panelMain.Controls.Add(labelEx);
+            }
         }
-        //public ButtonEx(string topText, string bottomText, int width, int height)
-        //{
-        //    InitializeComponent();
-
-        //    lblTop.Text = topText;
-        //    lblBottom.Text = bottomText;
-
-        //    this.panel1.BorderStyle = BorderStyle.FixedSingle;
-        //    this.panel1.Width = width;
-        //    this.panel1.Height = height;
-        //    this.lblTop.Height = (int)(percentOfTop * this.panel1.Height);
-        //    this.lblBottom.Height = (int)(percentOfBottom * this.panel1.Height);
-
-        //    this.panel1.Dock = DockStyle.Fill;
-        //    this.lblTop.Dock = DockStyle.Top;
-        //    this.lblBottom.Dock = DockStyle.Bottom;
-        //}
 
         private void ButtonEx_Resize(object sender, EventArgs e)
         {
-            this.panelMain.Width = this.Width;
-            this.panelMain.Height = this.Height;
-            this.lblTop.Height = (int)(percentOfTop * this.panelMain.Height);
-            this.lblBottom.Height = (int)(percentOfBottom * this.panelMain.Height);
+            if (!_useLabelEx)
+            {
+                this.panelMain.Width = this.Width;
+                this.panelMain.Height = this.Height;
+                this.lblTop.Height = (int)(percentOfTop * this.panelMain.Height);
+                this.lblBottom.Height = (int)(percentOfBottom * this.panelMain.Height);
 
-            this.panelMain.Dock = DockStyle.Fill;
-            this.lblTop.Dock = DockStyle.Top;
-            this.lblBottom.Dock = DockStyle.Bottom;
+                this.panelMain.Dock = DockStyle.Fill;
+                this.lblTop.Dock = DockStyle.Top;
+                this.lblBottom.Dock = DockStyle.Bottom;
+            }
+            else
+            {
+                this.panelMain.Width = this.Width;
+                this.panelMain.Height = this.Height;
+                this.lblTop.Height = (int)(percentOfTop * this.panelMain.Height);
+                labelEx.Height = (int)(percentOfBottom * this.panelMain.Height);
+
+
+                this.panelMain.Dock = DockStyle.Fill;
+                this.lblTop.Dock = DockStyle.Top;
+                this.labelEx.Dock = DockStyle.Bottom;
+                labelEx.BackColor = Color.FromArgb(255, 255, 255);
+            }
         }
     }
 }
