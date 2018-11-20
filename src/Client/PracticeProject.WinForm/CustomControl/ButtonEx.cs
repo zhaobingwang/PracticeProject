@@ -21,6 +21,13 @@ namespace PracticeProject.WinForm.CustomControl
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="topText"></param>
+        /// <param name="bottomText"></param>
+        /// <param name="useLabelEx"></param>
         public ButtonEx(string topText, string bottomText, bool useLabelEx) : this()
         {
             _useLabelEx = useLabelEx;
@@ -68,5 +75,34 @@ namespace PracticeProject.WinForm.CustomControl
                 labelEx.BackColor = Color.FromArgb(255, 255, 255);
             }
         }
+
+        //public void ClearMemory()
+        //{
+        //    if (labelEx != null)
+        //    {
+        //        labelEx.Dispose();
+        //        labelEx = null;
+        //    }
+        //    if (lblTop != null)
+        //    {
+        //        lblTop.Dispose();
+        //        lblTop = null;
+        //    }
+        //    if (lblBottom != null)
+        //    {
+        //        lblBottom.Dispose();
+        //        lblBottom = null;
+        //    }
+        //}
+
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        CreateParams paras = base.CreateParams;
+        //        paras.ExStyle |= 0x02000000;
+        //        return paras;
+        //    }
+        //}
     }
 }

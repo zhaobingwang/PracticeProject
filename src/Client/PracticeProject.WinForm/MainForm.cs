@@ -16,5 +16,11 @@ namespace PracticeProject.WinForm
         {
             InitializeComponent();
         }
+
+        private void btnCustomControls_Click(object sender, EventArgs e)
+        {
+            CustomControlDemo.Demo demo = new CustomControlDemo.Demo();
+            demo.Show();
+        }
     }
 }

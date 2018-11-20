@@ -202,6 +202,9 @@
     <EmbeddedResource Include="CustomControl\LabelEx.resx">
       <DependentUpon>LabelEx.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MultiThreading\TaskInWinform.resx">
       <DependentUpon>TaskInWinform.cs</DependentUpon>
     </EmbeddedResource>
