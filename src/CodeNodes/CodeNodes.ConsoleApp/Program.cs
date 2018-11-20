@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeNodes.Core;
+using System;
 
 namespace CodeNodes.ConsoleApp
 {
@@ -6,7 +7,10 @@ namespace CodeNodes.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DocumentationComments comments = new DocumentationComments();
+            Core.Math.Add(1, 2);
+            comments.Add(1, 2);
+            comments.Add(1.2, 3.4);
         }
     }
 }
