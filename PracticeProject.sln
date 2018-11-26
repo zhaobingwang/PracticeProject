@@ -70,9 +70,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeNodes.Core", "src\CodeN
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.SingalR", "7.SingalR", "{BB1222DD-15B2-416E-A52E-276CC246215C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChat", "src\SignalR\SignalRChat\SignalRChat.csproj", "{F979BE6A-1D54-4DAC-837A-F393E51BF9D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRChat", "src\SignalR\SignalRChat\SignalRChat.csproj", "{F979BE6A-1D54-4DAC-837A-F393E51BF9D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatConsoleClient", "src\SignalR\ChatConsoleClient\ChatConsoleClient.csproj", "{35CA4374-7E67-4E44-8E45-90BA30D7A514}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatConsoleClient", "src\SignalR\ChatConsoleClient\ChatConsoleClient.csproj", "{35CA4374-7E67-4E44-8E45-90BA30D7A514}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProject.WebMVCNetCore", "src\PracticeProject.WebMVCNetCore\PracticeProject.WebMVCNetCore.csproj", "{54869F21-2E48-4C61-A9CE-E0E07560BCBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -176,6 +178,10 @@ Global
 		{35CA4374-7E67-4E44-8E45-90BA30D7A514}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35CA4374-7E67-4E44-8E45-90BA30D7A514}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35CA4374-7E67-4E44-8E45-90BA30D7A514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54869F21-2E48-4C61-A9CE-E0E07560BCBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54869F21-2E48-4C61-A9CE-E0E07560BCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54869F21-2E48-4C61-A9CE-E0E07560BCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54869F21-2E48-4C61-A9CE-E0E07560BCBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -204,6 +210,7 @@ Global
 		{9AC86B07-2870-4559-A1A5-6F5087ED3647} = {39AD7A07-B010-4BE8-A56D-0DF0E9177EE4}
 		{F979BE6A-1D54-4DAC-837A-F393E51BF9D5} = {BB1222DD-15B2-416E-A52E-276CC246215C}
 		{35CA4374-7E67-4E44-8E45-90BA30D7A514} = {BB1222DD-15B2-416E-A52E-276CC246215C}
+		{54869F21-2E48-4C61-A9CE-E0E07560BCBB} = {5E3D29E3-03C8-4B98-8399-ED5360A717E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCC74296-FFDB-4B08-89F1-6365CF9C3EA0}
