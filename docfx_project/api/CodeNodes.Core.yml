@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: CodeNodes.Core
+  commentId: N:CodeNodes.Core
+  id: CodeNodes.Core
+  children:
+  - CodeNodes.Core.DocumentationComments
+  langs:
+  - csharp
+  - vb
+  name: CodeNodes.Core
+  nameWithType: CodeNodes.Core
+  fullName: CodeNodes.Core
+  type: Namespace
+  assemblies:
+  - CodeNodes.Core
+references:
+- uid: CodeNodes.Core.DocumentationComments
+  commentId: T:CodeNodes.Core.DocumentationComments
+  name: DocumentationComments
+  nameWithType: DocumentationComments
+  fullName: CodeNodes.Core.DocumentationComments
