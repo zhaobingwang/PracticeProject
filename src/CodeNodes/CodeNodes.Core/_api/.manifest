@@ -2,5 +2,6 @@
   "CodeNodes.Core": "CodeNodes.Core.yml",
   "CodeNodes.Core.DocumentationComments": "CodeNodes.Core.DocumentationComments.yml",
   "CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)": "CodeNodes.Core.DocumentationComments.yml",
-  "CodeNodes.Core.DocumentationComments.Add(System.Int32,System.Int32)": "CodeNodes.Core.DocumentationComments.yml"
+  "CodeNodes.Core.DocumentationComments.Add(System.Int32,System.Int32)": "CodeNodes.Core.DocumentationComments.yml",
+  "CodeNodes.Core.DocumentationComments.Subtract(System.Int32,System.Int32)": "CodeNodes.Core.DocumentationComments.yml"
 }

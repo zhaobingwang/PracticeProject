@@ -7,6 +7,7 @@ items:
   children:
   - CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
   - CodeNodes.Core.DocumentationComments.Add(System.Int32,System.Int32)
+  - CodeNodes.Core.DocumentationComments.Subtract(System.Int32,System.Int32)
   langs:
   - csharp
   - vb
@@ -20,12 +21,13 @@ items:
       branch: master
       repo: https://github.com/zhaobingwang/PracticeProject.git
     id: DocumentationComments
-    path: src/CodeNodes/CodeNodes.Core/DocumentationComments.cs
-    startLine: 9
+    path: DocumentationComments.cs
+    startLine: 23
   assemblies:
   - CodeNodes.Core
   namespace: CodeNodes.Core
-  summary: "\n建议的文档注释标记\n"
+  summary: "\n建议的文档注释标记\n<ul><li>Add加法操作</li><li>Subtract减法操作</li></ul>\n"
+  remarks: "\n<p>此类可用于基本的四则运算(目前只有加法和减法(不包含double计算)).</p>\n<p>这些基本的四则运算可用于int和double类型的操作.</p>\n"
   example: []
   syntax:
     content: public class DocumentationComments
@@ -63,8 +65,8 @@ items:
       branch: master
       repo: https://github.com/zhaobingwang/PracticeProject.git
     id: Add
-    path: src/CodeNodes/CodeNodes.Core/DocumentationComments.cs
-    startLine: 30
+    path: DocumentationComments.cs
+    startLine: 45
   assemblies:
   - CodeNodes.Core
   namespace: CodeNodes.Core
@@ -72,7 +74,7 @@ items:
   example:
   - "\n这是一个介绍如何使用<xref href=\"CodeNodes.Core.DocumentationComments.Add(System.Int32%2cSystem.Int32)\" data-throw-if-not-resolved=\"false\"></xref>方法的示例\n<pre><code>class TestClass\n{\n    static int Main()\n    {\n        return Add(1,2);\n    }\n}</code></pre>\n"
   syntax:
-    content: public double Add(int n1, int n2)
+    content: public static double Add(int n1, int n2)
     parameters:
     - id: n1
       type: System.Int32
@@ -83,16 +85,21 @@ items:
     return:
       type: System.Double
       description: 两个整数的和
-    content.vb: Public Function Add(n1 As Integer, n2 As Integer) As Double
+    content.vb: Public Shared Function Add(n1 As Integer, n2 As Integer) As Double
   overload: CodeNodes.Core.DocumentationComments.Add*
   exceptions:
   - type: System.OverflowException
     commentId: T:System.OverflowException
-    description: 当两数之和大于int的最大值时抛出此异常.
+    description: 当一个数是int最大值另一个数大于0,抛出此异常.
+  seealso:
+  - linkId: CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
+    commentId: M:CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
   modifiers.csharp:
   - public
+  - static
   modifiers.vb:
   - Public
+  - Shared
 - uid: CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
   commentId: M:CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
   id: Add(System.Double,System.Double)
@@ -110,8 +117,8 @@ items:
       branch: master
       repo: https://github.com/zhaobingwang/PracticeProject.git
     id: Add
-    path: src/CodeNodes/CodeNodes.Core/DocumentationComments.cs
-    startLine: 56
+    path: DocumentationComments.cs
+    startLine: 72
   assemblies:
   - CodeNodes.Core
   namespace: CodeNodes.Core
@@ -119,7 +126,7 @@ items:
   example:
   - "\n这是一个介绍如何使用<xref href=\"CodeNodes.Core.DocumentationComments.Add(System.Double%2cSystem.Double)\" data-throw-if-not-resolved=\"false\"></xref>方法的示例\n<pre><code>class TestClass\n{\n    static int Main()\n    {\n        return Add(1.2,3.4);\n    }\n}</code></pre>\n"
   syntax:
-    content: public double Add(double d1, double d2)
+    content: public static double Add(double d1, double d2)
     parameters:
     - id: d1
       type: System.Double
@@ -130,16 +137,71 @@ items:
     return:
       type: System.Double
       description: 两个double类型数字的和
-    content.vb: Public Function Add(d1 As Double, d2 As Double) As Double
+    content.vb: Public Shared Function Add(d1 As Double, d2 As Double) As Double
   overload: CodeNodes.Core.DocumentationComments.Add*
   exceptions:
   - type: System.OverflowException
     commentId: T:System.OverflowException
-    description: 当两数之和大于int的最大值时抛出此异常.
+    description: 当一个数是double最大值另一个数大于0,抛出此异常.
+  seealso:
+  - linkId: CodeNodes.Core.DocumentationComments.Add(System.Int32,System.Int32)
+    commentId: M:CodeNodes.Core.DocumentationComments.Add(System.Int32,System.Int32)
   modifiers.csharp:
   - public
+  - static
   modifiers.vb:
   - Public
+  - Shared
+- uid: CodeNodes.Core.DocumentationComments.Subtract(System.Int32,System.Int32)
+  commentId: M:CodeNodes.Core.DocumentationComments.Subtract(System.Int32,System.Int32)
+  id: Subtract(System.Int32,System.Int32)
+  parent: CodeNodes.Core.DocumentationComments
+  langs:
+  - csharp
+  - vb
+  name: Subtract(Int32, Int32)
+  nameWithType: DocumentationComments.Subtract(Int32, Int32)
+  fullName: CodeNodes.Core.DocumentationComments.Subtract(System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/CodeNodes/CodeNodes.Core/DocumentationComments.cs
+      branch: master
+      repo: https://github.com/zhaobingwang/PracticeProject.git
+    id: Subtract
+    path: DocumentationComments.cs
+    startLine: 93
+  assemblies:
+  - CodeNodes.Core
+  namespace: CodeNodes.Core
+  summary: "\n计算 <code data-dev-comment-type=\"paramref\" class=\"paramref\">n1</code> 减去 <code data-dev-comment-type=\"paramref\" class=\"paramref\">n2</code> 的值.\n"
+  example:
+  - "\n<pre><code>int result=DocumentationComments.Subtract(2,4);\nConsole.WriteLine(result);</code></pre>\n"
+  syntax:
+    content: public static int Subtract(int n1, int n2)
+    parameters:
+    - id: n1
+      type: System.Int32
+      description: 一个int数.
+    - id: n2
+      type: System.Int32
+      description: 一个int数.
+    return:
+      type: System.Int32
+      description: 两个int数的差值.
+    content.vb: Public Shared Function Subtract(n1 As Integer, n2 As Integer) As Integer
+  overload: CodeNodes.Core.DocumentationComments.Subtract*
+  seealso:
+  - linkId: CodeNodes.Core.DocumentationComments.Add(System.Int32,System.Int32)
+    commentId: M:CodeNodes.Core.DocumentationComments.Add(System.Int32,System.Int32)
+  - linkId: CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
+    commentId: M:CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
 references:
 - uid: CodeNodes.Core
   commentId: N:CodeNodes.Core
@@ -441,6 +503,9 @@ references:
 - uid: CodeNodes.Core.DocumentationComments.Add(System.Int32,System.Int32)
   commentId: M:CodeNodes.Core.DocumentationComments.Add(System.Int32,System.Int32)
   isExternal: true
+- uid: CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
+  commentId: M:CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
+  isExternal: true
 - uid: System.OverflowException
   commentId: T:System.OverflowException
   isExternal: true
@@ -463,6 +528,8 @@ references:
   name: Double
   nameWithType: Double
   fullName: System.Double
-- uid: CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
-  commentId: M:CodeNodes.Core.DocumentationComments.Add(System.Double,System.Double)
-  isExternal: true
+- uid: CodeNodes.Core.DocumentationComments.Subtract*
+  commentId: Overload:CodeNodes.Core.DocumentationComments.Subtract
+  name: Subtract
+  nameWithType: DocumentationComments.Subtract
+  fullName: CodeNodes.Core.DocumentationComments.Subtract
