@@ -86,6 +86,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InheritBaseFormDemo\AlertDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InheritBaseFormDemo\AlertDialog.Designer.cs">
+      <DependentUpon>AlertDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="AutoUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
     <Compile Include="AutoUpdateDemo\AutoUpdaterDotNet.Designer.cs">
       <DependentUpon>AutoUpdaterDotNet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InheritBaseFormDemo\BaseForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="CallCmd.cs">
       <SubType>Form</SubType>
@@ -136,6 +145,12 @@
     </Compile>
     <Compile Include="CustomControl\LabelEx.Designer.cs">
       <DependentUpon>LabelEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InheritBaseFormDemo\InheritBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InheritBaseFormDemo\InheritBaseForm.Designer.cs">
+      <DependentUpon>InheritBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MultiThreading\TaskInWinform.cs">
       <SubType>Form</SubType>
@@ -210,6 +225,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\LabelEx.resx">
       <DependentUpon>LabelEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InheritBaseFormDemo\AlertDialog.resx">
+      <DependentUpon>AlertDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InheritBaseFormDemo\InheritBaseForm.resx">
+      <DependentUpon>InheritBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

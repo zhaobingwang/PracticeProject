@@ -8,8 +8,8 @@ namespace CodeNodes.ConsoleApp
         static void Main(string[] args)
         {
             DocumentationComments comments = new DocumentationComments();
-            comments.Add(1, 2);
-            comments.Add(1.2, 3.4);
+            //comments.Add(1, 2);
+            //comments.Add(1.2, 3.4);
         }
     }
 }
