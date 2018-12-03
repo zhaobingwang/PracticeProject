@@ -152,6 +152,12 @@
     <Compile Include="InheritBaseFormDemo\InheritBaseForm.Designer.cs">
       <DependentUpon>InheritBaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="layout\Table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="layout\Table.Designer.cs">
+      <DependentUpon>Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="MultiThreading\TaskInWinform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InheritBaseFormDemo\InheritBaseForm.resx">
       <DependentUpon>InheritBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="layout\Table.resx">
+      <DependentUpon>Table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
