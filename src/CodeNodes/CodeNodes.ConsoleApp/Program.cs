@@ -10,6 +10,7 @@ namespace CodeNodes.ConsoleApp
             DocumentationComments comments = new DocumentationComments();
             //comments.Add(1, 2);
             //comments.Add(1.2, 3.4);
+
         }
     }
 }
